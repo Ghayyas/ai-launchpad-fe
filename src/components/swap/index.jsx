@@ -90,7 +90,7 @@ import {
                 {/* <CurrencyBitcoinIcon/> */}
                 &nbsp;
                 <Select
-                onChange={(e) => setOption1(e.target.value)}
+                onChange={(e) => {!isSwap ? setOption1(e.target.value) : setOption2(e.target.value)}}
                 value={!isSwap ? option1 : option2}
                 >
                   {options.map((item, index) => <MenuItem key={index} value={item}>{item}</MenuItem>)}
@@ -115,7 +115,7 @@ import {
             <Button>
                 <div className="flex">
                 <Select
-                onChange={(e) => setOption2(e.target.value)}
+                onChange={(e) => {isSwap ? setOption1(e.target.value) : setOption2(e.target.value)}}
                 value={isSwap ? option1 : option2}
                 >
                   {options.map((item, index) => <MenuItem key={index} value={item}>{item}</MenuItem>)}
