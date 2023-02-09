@@ -12,9 +12,11 @@ import {
     TextField,
     Typography,
     useTheme,
-    Grid
+    Grid,
+    Select,
+    MenuItem
   } from "@mui/material";
-  import React from "react";
+  import React, { useState } from "react";
   import { tokens } from "../../theme";
   import Pairs from "../Pairs";
   import {    makeStyles  } from '@mui/styles';
@@ -44,7 +46,12 @@ import {
     const colors = tokens(theme.palette.mode);
     const classes = useStyles();
    
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
+    const [isSwap,setIsSwap] = useState(false);
+    const [option1, setOption1] = useState('BNB');
+    const [option2, setOption2] = useState('BTCB');
+
+    const options = ["BNB", "BTCB", "BUSD","ETH","PinkE","PinkS","SAFEHOLD"];
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -80,11 +87,15 @@ import {
                 <input type="number" className="border-none"/>
                 <Button>
                 <div className="flex">
-                <CurrencyBitcoinIcon/>
+                {/* <CurrencyBitcoinIcon/> */}
                 &nbsp;
-                <span>BTCB</span>
-                &nbsp;
-                <KeyboardArrowDownIcon/>
+                <Select
+                onChange={(e) => setOption1(e.target.value)}
+                value={!isSwap ? option1 : option2}
+                >
+                  {options.map((item, index) => <MenuItem key={index} value={item}>{item}</MenuItem>)}
+                </Select>
+              
                 </div>
                 </Button>
                
@@ -92,7 +103,7 @@ import {
 
             <div className="flex justify-between mr-top">
                 <div></div>
-                <Button><ArrowDownwardIcon/></Button>
+                <Button onClick={()=> setIsSwap(isSwap => !isSwap)}><ArrowDownwardIcon/></Button>
                 <div></div>
             </div>
             <Typography gutterBottom variant="h5" component="h2">
@@ -103,10 +114,13 @@ import {
 
             <Button>
                 <div className="flex">
-             
-                <span>Select a currency</span>
-                &nbsp;
-                <KeyboardArrowDownIcon/>
+                <Select
+                onChange={(e) => setOption2(e.target.value)}
+                value={isSwap ? option1 : option2}
+                >
+                  {options.map((item, index) => <MenuItem key={index} value={item}>{item}</MenuItem>)}
+                </Select>
+              
                 </div>
                 </Button>
             </div>
