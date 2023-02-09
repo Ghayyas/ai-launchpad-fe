@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.content{
+  overflow-y: scroll;
+  /* background-color: #f2f0f0!important; */
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.margin{
+  margin: 16px;
+}
+
+.danger{
+  color: red;
+}
+.primary{
+  color:rgba(27, 27, 238, 0.748);
+}
+
+.warning-msg{
+  margin-top: 25px;
+  padding: 8px;
+  background-color: #fffbe6;
+}
+.mr-top{
+  margin-top: 10px;
+}
+.flex{
+  display: flex;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.items-center{
+  align-items: center;
+}
+.bold{
+  font-weight: bold;
+}
+.font-18{
+  font-size: 18px;
+}
+.border-none{
+  border: none;
+  height: 30px;
+}
+
+.btcb-hover:hover{
+  background-color: gray;
+}
