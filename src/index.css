@@ -91,19 +91,20 @@ body,
   position: absolute;
     z-index: 1010;
     top: 41px;
+    left: 21px;
     color: #adadad;
 }
 .menu-btn-1{
   background: #f2f0f0;
     position: absolute;
     height: 100%;
-    width: 21%;
+    /* width: 21%; */
 }
 
 .menu-btn-2{
   background: #f2f0f0;
   position: absolute;
   height: 100%;
-  width: 71%;
+  /* width: 71%; */
 }
 
