@@ -37,17 +37,20 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
-const Sidebar = () => {
+const Sidebar = ({isCollapsed,setIsCollapsed}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  // const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
 
   return (
     <Box
+    
       sx={{
+        // display: { xs: 'none', sm: 'block' },
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
+          top:'100px'
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -66,7 +69,7 @@ const Sidebar = () => {
       <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
-          <MenuItem
+          {/* <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
@@ -87,7 +90,7 @@ const Sidebar = () => {
                 </IconButton>
               </Box>
             )}
-          </MenuItem>
+          </MenuItem> */}
 
           {!isCollapsed && (
             <Box mb="25px">

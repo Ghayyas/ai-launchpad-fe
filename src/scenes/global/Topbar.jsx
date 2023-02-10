@@ -11,6 +11,9 @@ import ModalWrapper from "../../components/Modal";
 import NetworkModal from "../../components/NetworkModal";
 import ETH from '../../Assets/eth.svg';
 import BSC from '../../Assets/bsc.png';
+
+
+
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -23,7 +26,13 @@ const Topbar = () => {
   const handleOpenNetwork = () => setOpenNetwork(true);
   console.log(network)
    return (
-    <Box sx={{display:'flex', justifyContent:'flex-end', backgroundColor:colors.primary[400]}} p={2}>
+    <>
+    <Box sx={{display:'flex', backgroundColor:colors.primary[400]}} p={2}>
+
+       {/* <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+            <MenuOutlinedIcon />
+        </IconButton> */}
+          <Box sx={{display:'flex', justifyContent:'flex-end'}} p={2}>
       {/* SEARCH BAR */}
       {/* <Box
         display="flex"
@@ -38,6 +47,7 @@ const Topbar = () => {
 
       {/* ICONS */}
       <Box sx={{display:'flex '}}>
+   
         <IconButton onClick={colorMode.toggleColorMode}
               sx={{ m: "0 10px 0 0" }}>
           {theme.palette.mode === "dark" ? (
@@ -57,6 +67,9 @@ const Topbar = () => {
         
       </Box>
     </Box>
+    </Box>
+    </>
+  
   );
 };
 

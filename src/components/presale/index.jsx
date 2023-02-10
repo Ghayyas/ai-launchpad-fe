@@ -8,7 +8,8 @@ import {
   TextField,
   Typography,
   useTheme,
-  Grid
+  Grid,
+  useMediaQuery
 } from "@mui/material";
 import React from "react";
 import { tokens } from "../../theme";
@@ -17,6 +18,8 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import { FormControl, FormControlLabel, Radio,RadioGroup,FormLabel } from "@mui/material";
+
+import {    makeStyles  } from '@mui/styles';
 
 import Step3 from './steps/step3';
 import Step4 from './steps/step4';
@@ -31,6 +34,8 @@ description:"Input your awesome title and choose the currency"},
 {label:'Private Sale', description:"Enter the launchpad information that you want to raise , that should be enter all details about your presale"}, 
 {label:'Add Additional Info', description:"Let people know who you are"},
 {label:'Finish', description:"Review your information"}];
+
+
 
 
 const Presale = () => {
@@ -75,12 +80,13 @@ const Presale = () => {
   };
 
 
+  const isSmallScreen = useMediaQuery('(max-width: 600px)');
 
 
   return (
     <>
       <Pairs title={"Home"} />
-      <Container>
+      <Container className="hide-screen">
       <Box sx={{height:"70px", padding:"28px"}}>
       <Stepper activeStep={activeStep}>
         {steps.map((step, index) => {
@@ -96,6 +102,7 @@ const Presale = () => {
         })}
       </Stepper>
       </Box>
+
       </Container>
 
 

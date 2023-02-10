@@ -80,3 +80,30 @@ body,
 .btcb-hover:hover{
   background-color: gray;
 }
+
+@media only screen and (max-width: 768px) {
+  /* styles to hide an element on mobile devices */
+  .hide-screen {
+    display: none !important;
+  }
+}
+.menu-btn{
+  position: absolute;
+    z-index: 1010;
+    top: 41px;
+    color: #adadad;
+}
+.menu-btn-1{
+  background: #f2f0f0;
+    position: absolute;
+    height: 100%;
+    width: 21%;
+}
+
+.menu-btn-2{
+  background: #f2f0f0;
+  position: absolute;
+  height: 100%;
+  width: 71%;
+}
+

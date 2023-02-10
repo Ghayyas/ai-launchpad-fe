@@ -25,7 +25,7 @@ const Pairs = ({ title, subtitle }) => {
     }
   ]
   return (
-    <Box mb="0" display={"flex"} sx={{padding: "10px",background: `${colors.primary[900]} !important`,}}>
+    <Box mb="0" display={"flex"} sx={{width:"100% !important", overflow:"auto !important", padding: "10px",background: `${colors.primary[900]} !important`,}}>
       <Typography 
         color={colors.grey[100]}
         fontWeight="bold"
